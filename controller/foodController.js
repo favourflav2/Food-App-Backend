@@ -223,7 +223,7 @@ export async function stripe_Payment(req, res) {
             }
             
           },
-          unit_amount: item.price * 100
+          unit_amount: item.price.toFixed(2) * 100
         },
         quantity: item.count
       }
