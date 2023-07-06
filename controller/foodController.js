@@ -251,8 +251,8 @@ export async function stripe_Payment(req, res) {
         orderDate: date
        },
        mode: "payment",
-       success_url: environment === "development" ? "http://localhost:3000/success" : "frontendpage",
-       cancel_url: environment === "development" ? "http://localhost:3000/error" : "frontendpage",
+       success_url: environment === "development" ? "http://localhost:3000/success" : "https://food-app-frontend-cbb2.onrender.com/success",
+       cancel_url: environment === "development" ? "http://localhost:3000/error" : "https://food-app-frontend-cbb2.onrender.com/error",
      });
      res.json({ url: session.url });
      //res.send("hello")
