@@ -38,6 +38,7 @@ export async function get_Popular(req, res) {
     const pastaData = await client.query(pasta1, pastaValue);
 
     const concatArray = pizzaData.rows.concat(saladData.rows, pastaData.rows);
+    
     res.send(concatArray);
     client.end();
   } catch (e) {
@@ -62,6 +63,7 @@ export async function get_Pizza(req, res) {
       };
     });
     //console.log(changeToNum)
+    //console.log(changeToNum)
     res.status(200).json(changeToNum);
     client.end();
   } catch (e) {
@@ -77,7 +79,7 @@ export async function get_Pasta(req, res) {
   try {
     const data = await pastaQuery(client);
     res.status(200).json(data.rows);
-    //console.log(data.rows);
+    
     client.end();
   } catch (e) {
     console.log(e);
@@ -92,7 +94,7 @@ export async function get_Salad(req, res) {
   try {
     const data = await saladQuery(client);
     res.status(200).json(data.rows);
-    //console.log(data.rows);
+    
     client.end();
   } catch (e) {
     console.log(e);
@@ -107,7 +109,6 @@ export async function get_Desert(req, res) {
   try {
     const data = await desertQuery(client);
     res.status(200).json(data.rows);
-    //console.log(data.rows);
     client.end();
   } catch (e) {
     console.log(e);
